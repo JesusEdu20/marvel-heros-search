@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/CSS/index.css" rel="stylesheet">
+    <title>Marvel web</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@100;200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Icons from google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+<body>
+
+    <header class="header">
+
+        <nav class="header__menu">
+            <div class="search-bar-container">
+                <div class="search-bar">
+                    <span class="material-symbols-outlined search-bar-lupa">search</span>
+                    <input class="search-bar__input" type="text" placeholder="Type your hero">
+                </div>
+                <div class="search-button-container">
+                    <button class="search__button">Search</button>
+                    <button class="search__button">Random</button>
+                </div>
+            </div>
+        </nav>
+
+    
+         
+        <div class="slider-section">
+            <div class="frontDiv"></div>
+            <div class="superHero-slider-container">
+
+                <div class="track-slider">
+               
+                    <div data-slide="slide1" class="slide">
+                        
+                        <div class="slide-img-container">
+                            <img class="slide__img" src="" alt="">
+                        </div>
+                        
+                    </div>
+
+                    <div data-slide="slide2" class="slide">
+                        
+                        <div class="slide-img-container">
+                            <img class="slide__img" src="" alt="">
+                        </div>
+                        
+                    </div>
+
+                    <div data-slide="slide3" class="slide">
+                        
+                        <div class="slide-img-container">
+                            <img class="slide__img" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div data-slide="slide4" class="slide">
+                        
+                        <div class="slide-img-container">
+                            <img class="slide__img" src="" alt="">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <button aria-label="Previous" class="prev">«</button>
+                <button aria-label="Next" class="next">»</button>
+                <div role="tablist" class="dots"></div>
+
+                
+
+            </div>
+
+            <div class="slider-title-container">
+                <h1>Marvel Search</h1>
+            </div>
+           
+        </div>
+            
+    </header>
+
+    <script src="/src/index.js" type="module"></script>
+</body>
+</html>
