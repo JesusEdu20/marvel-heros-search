@@ -57,15 +57,21 @@ html {
 
 .slider-section {
   display: flex;
+  cursor: pointer;
   justify-content: flex-start; }
   .slider-section .slider-title-container {
+    opacity: 0;
     position: absolute;
     bottom: 0;
-    z-index: 8;
-    font-size: 2rem;
+    z-index: 40;
+    font-size: 1.8rem;
     font-family: "Poppins", sans-serif;
     color: white;
     margin: 0 0 20px 20px; }
+  .slider-section .slider-title-container:hover {
+    color: #e1e5f5;
+    opacity: 1;
+    transition: opacity 1s; }
 
 .search-bar-container {
   display: flex;
@@ -80,7 +86,8 @@ html {
     display: flex;
     align-items: center;
     background-color: white;
-    border-radius: 20px; }
+    border-radius: 20px;
+    opacity: 0.5; }
     .search-bar-container .search-bar .search-bar-lupa {
       width: 10%;
       text-align: center;
@@ -94,7 +101,7 @@ html {
       outline: none;
       font-family: "Poppins", sans-serif;
       font-weight: 600;
-      opacity: 0.4; }
+      opacity: 0.8; }
     .search-bar-container .search-bar .search-bar__input:hover {
       opacity: 1;
       transition: opacity 0.7s; }
@@ -111,5 +118,12 @@ html {
       border: none;
       font-weight: 700;
       font-family: "Montserrat", sans-serif; }
+
+.test-radient {
+  display: none;
+  width: 100%;
+  height: 200px;
+  background: #e1e5f5;
+  background: radial-gradient(circle, #e1e5f5 9%, #cc3051 21%, #3e393a 87%); }
 
 /*# sourceMappingURL=index.css.map */

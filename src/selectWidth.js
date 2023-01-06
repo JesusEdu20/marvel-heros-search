@@ -57,28 +57,47 @@ export class selectWidth{
         
         let elementWidthCollection= document.querySelectorAll(`${elementWidthParameter}`);
         let elementWidth=Array.from(elementWidthCollection);
-    
-       
+        
+        
     
        /*elementWidth[0].clientWidth */
         
         const divider=Math.floor(containerWidth.clientWidth/320)
-        console.log(divider)
+        console.log(divider)    
         
         if(divider%2==0){
-    
-            console.log("par");
+            
+            console.log(`el devider es  ${divider}`);
+            console.log(`el tamaño es ${containerWidth.clientWidth/divider}`);
+            if(divider<=4){
+                elementWidth.map((elem)=>{elem.style.width=`${containerWidth.clientWidth/divider}px`})
+                console.log("menor o igual que 4")
+            }
+            else{
+                
+                elementWidth.map((elem)=>{elem.style.width=`${containerWidth.clientWidth/elementWidthCollection.length}px`})
+                console.log("mayor o igual que 4")
+            }
            
-            elementWidth.map((elem)=>{elem.style.width=`${containerWidth.clientWidth/divider}px`})
-            console.log(elementWidth.clientWidth)
-            console.log("llega")
+
+         
         }
-    
+
+       
         else{
-    
-            console.log("impar");
-            elementWidth.map((elem)=>
-            {elem.style.width=divider-1==0?`${containerWidth.clientWidth}px`:`${containerWidth.clientWidth/(divider-1)}px`});
+            
+         
+
+            if(divider<=4){
+                elementWidth.map((elem)=>
+                {elem.style.width=divider-1==0?`${containerWidth.clientWidth}px`:`${containerWidth.clientWidth/(divider-1)}px`});
+            }
+            else{
+
+                elementWidth.map((elem)=>{elem.style.width=`${containerWidth.clientWidth/elementWidthCollection.length}px`})
+                
+            }
+           
         }
     }
     

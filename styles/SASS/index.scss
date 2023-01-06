@@ -100,18 +100,27 @@ html{
 
 .slider-section{
     display: flex;
+    cursor: pointer;
     justify-content: flex-start;
     .slider-title-container{
-       
+        opacity: 0;
         position: absolute;
         bottom: 0;
-        z-index: 8;
-        font-size: 2rem;
+        z-index: 40;
+        font-size: 1.8rem;
         font-family: $primary-font;
         color: rgb(255, 255, 255);
         margin: 0 0 20px 20px;
         
+        
+    }
+    .slider-title-container:hover{
+        color: rgb(225,229,245);
        
+        opacity: 1;
+        
+        transition: opacity 1s
+    
     }
 }
 
@@ -134,7 +143,7 @@ html{
         align-items: center;
         background-color: white;
         border-radius: 20px;
-        
+        opacity: 0.5;
 
       
 
@@ -156,7 +165,7 @@ html{
         //border-radius: 20px;
         font-family: $primary-font;
         font-weight: 600;
-        opacity: 0.4;
+        opacity: 0.8;
         
         
 
@@ -191,4 +200,14 @@ html{
     }
 
 
+}
+
+
+
+.test-radient{
+    display: none;
+    width: 100%;
+    height: 200px;
+    background: rgb(225,229,245);
+    background: radial-gradient(circle, rgba(225,229,245,1) 9%, rgb(204, 48, 81) 21%, rgba(62,57,58,1) 87%);
 }
