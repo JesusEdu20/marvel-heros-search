@@ -6,3 +6,5 @@ const bar=document.querySelector(".search-bar");
 bar.addEventListener("mousemove", ()=>{
     console.log("hola")
 })
+
+

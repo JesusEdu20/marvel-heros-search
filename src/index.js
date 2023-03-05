@@ -1,6 +1,7 @@
 import { slider } from "./slider.js";
 import { gallery } from "./gallery.js";
 import { randomImg } from "./randomImg.js";
+import { animateBtn } from "./lib/animate-buttons.js";
 
 import { selectWidth } from "./selectWidth.js";
 
@@ -45,4 +46,18 @@ bar.addEventListener("mouseleave", ()=>{
 })
 
 
+
+
+
+
+/*Botones animados */
+
+  //Elements from Dom
+  const btnUpperLayer= document.querySelector(".text-box");
+  const gradient=document.querySelector(".background-gradient");
+  const buttonContainer=document.querySelector(".button-container");
+  
+
+const test= new animateBtn(gradient, btnUpperLayer);
+test.turnOn("slidingBackground",  buttonContainer)
 
