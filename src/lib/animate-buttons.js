@@ -11,24 +11,51 @@ export class animateBtn{
             
            return this.animation(elementFill, elementDirection, transformProp,customAnimation)
         }
+
+        this.collect=()=>{
+           const collectionBtn=document.querySelectorAll(".super-button");
+           const collectionElementsToMove=document.querySelectorAll(".background-gradient");
+
+           const collection={
+            button: collectionBtn,
+            elementToAnimate: collectionElementsToMove
+           }
+           return  collection
+        }
     }
 
     
     turnOn=(animationName)=>{
 
-        this.upperLayerBtn.addEventListener("mouseover", ()=>{
+        //llamado a la propiedad collect; recolecta todos los botones para animación 
+        let collectionBtn= this.collect();
+        
+        //mapeo de la lista de nodos "nodelist" de la propiedad button del objeto retornado por "this.collecT()"
 
-            const animation=this.config("forwards", "normal", "translate(-200px)", null)
-            this.elementToAnimate.animate(animation[animationName][0], animation[animationName][1])
+        Array.from(collectionBtn.button).map((button, index)=>{
+
+
+            collectionBtn.elementToAnimate[index]//elements to move
+                
+              button.addEventListener("mouseover", ()=>{
+
+                const animation=this.config("forwards", "normal", "translate(-200px)", null)
+
+                 //aply
+                 collectionBtn.elementToAnimate[index].animate(animation[animationName][0], animation[animationName][1])
+            })
+
+                button.addEventListener("mouseleave", ()=>{
+                console.log("mouseafuera")
+                const animation=this.config("forwards", "normal", "translate(0px)", null)
+
+                //aply
+                collectionBtn.elementToAnimate[index].animate(animation[animationName][0], animation[animationName][1])
         })
 
-        this.upperLayerBtn.addEventListener("mouseleave", ()=>{
-            console.log("mouseafuera")
-            const animation=this.config("forwards", "normal", "translate(0px)", null)
-            this.elementToAnimate.animate(animation[animationName][0], animation[animationName][1])
-        })
-
-    }
+    })
+     
+}
 
 }
 
