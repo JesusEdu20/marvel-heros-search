@@ -8,6 +8,7 @@
   height: 50px;
   margin: 0 30px 0 0;
   position: relative;
+  z-index: 100;
   cursor: pointer;
   /*background-color: aqua;*/
   /*border: 1px solid black;
@@ -198,13 +199,31 @@
   height: 100%; }
 
 .main {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  min-width: 320px;
   height: 600px;
-  background-color: #01010e;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  min-width: 320px;
+  background-color: #01010e; }
+
+.categories-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 50px 0 0 0;
+  z-index: -2; }
+
+.section-category-movie {
+  width: 100%;
+  height: 300px;
+  padding: 0 40px; }
+  .section-category-movie .category-movie-btn {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center; }
 
 html {
   font-size: 62.5%; }

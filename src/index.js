@@ -58,6 +58,16 @@ bar.addEventListener("mouseleave", ()=>{
   const buttonContainer=document.querySelector(".button-container");
   
 
+
+
 const test= new animateBtn(gradient, btnUpperLayer);
-test.turnOn("slidingBackground",  buttonContainer)
+test.turnOn("slidingBackground",  {
+    overAccion:{fill: "forwards", direction: "normal", transformProp: "translate(-200px)"},
+    outAccion:{fill: "forwards", direction: "normal", transformProp: "translate(-0px)"}
+})
+
+
+// se debe colocar los parametros de confiuración de la animación de entrada y salida
+
+
 
