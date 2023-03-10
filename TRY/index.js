@@ -55,9 +55,9 @@ const  lineAnimationOut=(element, elementFill, elementDirection, transformPropOn
   
 //line
 btnUpperLayer.addEventListener("mouseover",()=>{
-  lineAnimationOver(elementLine, "forwards", "normal", "20px", "80%")
+  lineAnimationOver(elementLine, "forwards", "normal", "1px", "80vw")
 } )
 
 btnUpperLayer.addEventListener("mouseleave",()=>{
-  lineAnimationOut(elementLine, "forwards","normal", "80%", "20px")
+  lineAnimationOut(elementLine, "forwards","normal", "80vw", "1px")
 } )

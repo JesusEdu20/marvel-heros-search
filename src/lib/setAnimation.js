@@ -4,13 +4,21 @@
 export const  setAnimation=(configuration)=>{
 
 
-    let slidingBackground=[[{transform: "translate(0px)"}, //frames
+    let slidingBackground=[[{transform: configuration["transformPropOne"]}, //frames
     {transform: configuration["transformProp"]}],
 
       {duration:200, iterations:1, direction:  configuration["direction"], fill:  configuration["fill"] } //config
     ]
 
-    const animationCollection={slidingBackground}
+
+    let lineAnimation=[[{width:configuration["transformPropOne"]},
+      {width: configuration["transformProp"]}],
+
+      {duration:200, iterations:1,
+      direction: configuration["direction"], fill: configuration["fill"]}]
+
+
+    const animationCollection={slidingBackground, lineAnimation}
     
     return animationCollection
 

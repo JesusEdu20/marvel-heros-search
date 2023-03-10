@@ -56,16 +56,41 @@ bar.addEventListener("mouseleave", ()=>{
   const btnUpperLayer= document.querySelector(".text-box");
   const gradient=document.querySelector(".background-gradient");
   const buttonContainer=document.querySelector(".button-container");
+  const lineAnimation= document.querySelector(".line-animation");
+ 
   
 
 
 
 const test= new animateBtn(gradient, btnUpperLayer);
+test.collect();
 test.turnOn("slidingBackground",  {
-    overAccion:{fill: "forwards", direction: "normal", transformProp: "translate(-200px)"},
+    overAccion:{fill: "forwards", direction: "normal", transformPropOne: "translate(0px)", transformProp:"translate(-200px)"},
     outAccion:{fill: "forwards", direction: "normal", transformProp: "translate(-0px)"}
 })
 
+
+/*
+const test= new animateBtn(gradient, btnUpperLayer);
+test.collect(".super-button",".background-gradient"); boton/animar 
+
+test.turnOn("slidingBackground",  {
+    overAccion:{fill: "forwards", direction: "normal", transformPropOne: "translate(0px)", transformProp:"translate(-200px)"},
+    outAccion:{fill: "forwards", direction: "normal", transformProp: "translate(-0px)"}
+})
+
+.animation("object","animation");
+
+
+
+ */
+/*
+const test2= new animateBtn(lineAnimation, btnUpperLayer);
+test2.collect(".super-button",".line-animation");
+test2.turnOn("lineAnimation",  {
+    overAccion:{fill: "forwards", direction: "normal", transformPropOne: "1px", transformProp:"80vw"},
+    outAccion:{fill: "forwards", direction: "normal", transformPropOne: "80vw",transformPropOne:"1px"}
+})*/
 
 // se debe colocar los parametros de confiuración de la animación de entrada y salida
 
