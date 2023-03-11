@@ -18,7 +18,7 @@ export const  setAnimation=(configuration)=>{
       direction: configuration["direction"], fill: configuration["fill"]}]
 
 
-    const animationCollection={slidingBackground, lineAnimation}
+    const animationCollection={slidingBackground,lineAnimation}
     
     return animationCollection
 

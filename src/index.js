@@ -63,12 +63,28 @@ bar.addEventListener("mouseleave", ()=>{
 
 
 const test= new animateBtn(gradient, btnUpperLayer);
+
+test.insertAnimationElse(".line-animation", 
+                        {
+                            overAccion:{fill: "forwards", direction: "normal", transformPropOne: "1px", transformProp:"60vw"},
+                            outAccion:{fill: "forwards", direction: "normal",transformPropOne: "60vw", transformProp: "1px"}
+                        }
+                        ,"lineAnimation")
+
+
 test.collect();
 test.turnOn("slidingBackground",  {
     overAccion:{fill: "forwards", direction: "normal", transformPropOne: "translate(0px)", transformProp:"translate(-200px)"},
     outAccion:{fill: "forwards", direction: "normal", transformProp: "translate(-0px)"}
 })
 
+
+                        
+                       
+
+
+
+/*element, configuration, animationName */
 
 /*
 const test= new animateBtn(gradient, btnUpperLayer);

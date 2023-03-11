@@ -7,11 +7,16 @@ export class animateBtn{
         this.elementToAnimate=elementToAnimate;
         this.upperLayerBtn=elementUpperLayerBtn;
         this.animation=setAnimation;
-        this.box=[]
-        this.add=(dataAnimation)=>{
-            this.box.push(dataAnimation)
-        }
-        
+        this.box=[],
+        this.insertAnimationElse=(element, configuration, animationName )=>{
+
+            this.box.push({
+                elements:Array.from(document.querySelectorAll(element)),
+                configuration: configuration,
+                animationName: animationName
+
+            });
+       }
         
         //SELECCIONA LA ANIMACIÓN Y REALIZA UN SET DE LA MISMA A TRAVES DEL SETANIMATION
         this.config=(config, executed)=>{
@@ -35,19 +40,22 @@ export class animateBtn{
            const collectionBtn=document.querySelectorAll(".super-button");
            const collectionElementsToMove=document.querySelectorAll(".background-gradient");
 
+
             const collection={
             button: collectionBtn,
-            elementToAnimate: collectionElementsToMove
+            elementToAnimate: collectionElementsToMove,
+            animationElse:this.box
+
            }
            
            return  collection
         }
 
         //APLICA LA ANIMACIÓN,LLAMADO A LA API WEB "ANIMATE"
-        this.applyAnimation=(element,configuration, animationName)=>{
+        this.applyAnimation=(element, configuration, animationName, executed)=>{
 
             //set de la animación
-            const animation=this.animation(this.config(configuration, true ))
+            const animation=this.animation(this.config(configuration, executed ))
             element.animate(animation[animationName][0], animation[animationName][1])
         }
     }
@@ -58,47 +66,63 @@ export class animateBtn{
         //llamado a la propiedad collect; recolecta todos los botones para animación 
         let collectionBtn= this.collect();
         
-        
         //mapeo de la lista de nodos "nodelist" de la propiedad button del objeto retornado por "this.collecT()"
-       
+
         
+      
+        //console.log(this.box.length)
+        //BUCLE/MAP
+
         Array.from(collectionBtn.button).map((button, index)=>{
             
-           
             collectionBtn.elementToAnimate[index]//elements to move
           
               button.addEventListener("mouseover", ()=>{
 
-                /*const animation=this.config("forwards", "normal", "translate(-200px)", null)*/
-                
-                //set de la animación
-                /*const animation=this.animation(this.config(configuration, true ))*/
-
-
-                 //apply:(params: element, frames, optionsConfig)
-                 /*this.applyAnimation(collectionBtn.elementToAnimate[index], animation[animationName][0], animation[animationName][1])*/
-
                 //params: element, frames, configOptions, animationName
 
-                this.applyAnimation(collectionBtn.elementToAnimate[index], configuration, animationName)
+                this.applyAnimation(collectionBtn.elementToAnimate[index], configuration, animationName, true)
 
-                /*
-                 this.applyAnimation(collectionBtn.elementToAnimate[index], configuration, animationName)*/
+                for(let i=0; i<collectionBtn.animationElse.length; i++){
+                                        //element
 
-                 /*
-                 collectionBtn.elementToAnimate[index].animate(animation[animationName][0], animation[animationName][1])*/
+                    this.applyAnimation(collectionBtn.animationElse[i].elements[index], collectionBtn.animationElse[i].configuration, collectionBtn.animationElse[i].animationName, true)
+                    //Hacer mas legible
+
+                }
+
+                   
+                
+               
+
             })
 
                 button.addEventListener("mouseleave", ()=>{
-
                     
                 //set de la animación 
                 /*const animation=this.config("forwards", "normal", "translate(0px)", null)*/
                 
+                //params: element, frames, configOptions, animationName
+
+                this.applyAnimation(collectionBtn.elementToAnimate[index], configuration, animationName, false)
+
+                for(let i=0; i<collectionBtn.animationElse.length; i++){
+                                        //element
+                    
+                    this.applyAnimation(collectionBtn.animationElse[i].elements[index], collectionBtn.animationElse[i].configuration, collectionBtn.animationElse[i].animationName, false)
+                    //Hacer mas legible
+
+                }
+
+                  
+
+
+
+                /* VERSION 1
                 const animation=this.animation(this.config(configuration, false))
 
                 //aply
-                collectionBtn.elementToAnimate[index].animate(animation[animationName][0], animation[animationName][1])
+                collectionBtn.elementToAnimate[index].animate(animation[animationName][0], animation[animationName][1])*/
         })
 
     })

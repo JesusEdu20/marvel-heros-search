@@ -106,7 +106,7 @@
 
 
 
-.line-animation{
+.loki-line-animation{
     position: absolute;
     display: block;
     top: 25px;
@@ -236,6 +236,33 @@
     height: 100%;
 }
 
+.spiderman-line-animation{
+    position: absolute;
+    display: block;
+    top: 25px;
+    left: 100%;    
+    z-index: -6;
+    width: 1px;
+    height: 2px;
+    /*animation-name: up;
+    animation-duration: 2s;
+    
+    animation-direction: alternate; 
+    animation-iteration-count: infinite;
+    */
+    animation-delay: 1s;
+    border-radius: 50px;
+    background-color: rgb(219, 237, 255);
+    box-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #1078ee , 0 0 70px #06cbfc , 0 0 80px #1900ff , 0 0 100px #008cff ;
+  
+}
+
+
+
+
+
+
+
 
 
 
@@ -343,6 +370,26 @@
 
 
 
+.ironman-line-animation{
+    position: absolute;
+    display: block;
+    top: 25px;
+    left: 100%;    
+    z-index: -6;
+    width: 1px;
+    height: 2px;
+    /*animation-name: up;
+    animation-duration: 2s;
+    
+    animation-direction: alternate; 
+    animation-iteration-count: infinite;
+    */
+    animation-delay: 1s;
+    border-radius: 50px;
+    background-color: rgb(255, 243, 243);
+    box-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #ee1010 , 0 0 70px #fc063b , 0 0 80px #ff0000 , 0 0 100px #ff0000 ;
+  
+}
 
 
 
